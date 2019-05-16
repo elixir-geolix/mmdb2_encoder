@@ -8,6 +8,7 @@ defmodule MMDB2Encoder do
 
   # extended data types
   @extended_bool 7
+  @extended_cache 5
 
   @doc """
   Encodes a value to the appropriate MMDB2 representation.
@@ -15,4 +16,5 @@ defmodule MMDB2Encoder do
   @spec encode(term) :: binary
   def encode(true), do: <<@extended::size(3), 1::size(5), @extended_bool>>
   def encode(false), do: <<@extended::size(3), 0::size(5), @extended_bool>>
+  def encode(:cache), do: <<@extended::size(3), 0::size(5), @extended_cache>>
 end
