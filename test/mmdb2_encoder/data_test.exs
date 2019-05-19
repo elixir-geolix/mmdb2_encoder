@@ -3,7 +3,9 @@ defmodule MMDB2Encoder.DataTest do
 
   @test_values [
     false,
-    true
+    true,
+    :cache,
+    :end
   ]
 
   test "encode decode cycle" do
