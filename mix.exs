@@ -1,4 +1,4 @@
-defmodule MMDB2Encoder.Mixfile do
+defmodule MMDB2Encoder.MixProject do
   use Mix.Project
 
   @url_github "https://github.com/elixir-geolix/mmdb2_encoder"
