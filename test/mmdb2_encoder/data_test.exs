@@ -16,7 +16,7 @@ defmodule MMDB2Encoder.DataTest do
   for {name, value} <- @test_values do
     test "encode decode cycle: #{name}" do
       assert unquote(value) ==
-               unquote(value) |> MMDB2Encoder.Data.encode() |> MMDB2Decoder.Data.value(0)
+               unquote(value) |> MMDB2Encoder.Data.encode() |> MMDB2Decoder.Data.value(0, [])
     end
   end
 end

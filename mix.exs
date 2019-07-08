@@ -28,7 +28,7 @@ defmodule MMDB2Encoder.MixProject do
       {:dialyxir, "~> 1.0.0-rc", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:excoveralls, "~> 0.11", only: :test, runtime: false},
-      {:mmdb2_decoder, "~> 1.0.0", only: :test, runtime: false}
+      {:mmdb2_decoder, "~> 1.1", only: :test, runtime: false}
     ]
   end
 
