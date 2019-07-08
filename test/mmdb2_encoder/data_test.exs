@@ -9,7 +9,7 @@ defmodule MMDB2Encoder.DataTest do
     {"binary length 65_821", String.duplicate("x", 65_821)},
     {"boolean false", false},
     {"boolean true", true},
-    {"cache marker", :cache},
+    {"cache container", :cache},
     {"end marker", :end}
   ]
 

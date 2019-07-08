@@ -6,8 +6,8 @@ defmodule MMDB2Encoder.Data do
   @extended 0
 
   # extended data types
-  @extended_bool 7
-  @extended_cache 5
+  @extended_boolean 7
+  @extended_cache_container 5
   @extended_end_marker 6
 
   @doc """
@@ -28,8 +28,8 @@ defmodule MMDB2Encoder.Data do
   def encode(binary) when is_binary(binary),
     do: <<@binary::size(3), byte_size(binary)::size(5), binary::binary>>
 
-  def encode(true), do: <<@extended::size(3), 1::size(5), @extended_bool>>
-  def encode(false), do: <<@extended::size(3), 0::size(5), @extended_bool>>
-  def encode(:cache), do: <<@extended::size(3), 0::size(5), @extended_cache>>
+  def encode(true), do: <<@extended::size(3), 1::size(5), @extended_boolean>>
+  def encode(false), do: <<@extended::size(3), 0::size(5), @extended_boolean>>
+  def encode(:cache), do: <<@extended::size(3), 0::size(5), @extended_cache_container>>
   def encode(:end), do: <<@extended::size(3), 0::size(5), @extended_end_marker>>
 end
