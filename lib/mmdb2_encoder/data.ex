@@ -30,6 +30,6 @@ defmodule MMDB2Encoder.Data do
 
   def encode(true), do: <<@extended::size(3), 1::size(5), @extended_boolean>>
   def encode(false), do: <<@extended::size(3), 0::size(5), @extended_boolean>>
-  def encode(:cache), do: <<@extended::size(3), 0::size(5), @extended_cache_container>>
-  def encode(:end), do: <<@extended::size(3), 0::size(5), @extended_end_marker>>
+  def encode(:cache_container), do: <<@extended::size(3), 0::size(5), @extended_cache_container>>
+  def encode(:end_marker), do: <<@extended::size(3), 0::size(5), @extended_end_marker>>
 end

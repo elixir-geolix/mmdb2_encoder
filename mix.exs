@@ -28,7 +28,11 @@ defmodule MMDB2Encoder.MixProject do
       {:dialyxir, "~> 1.0.0-rc", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:excoveralls, "~> 0.11", only: :test, runtime: false},
-      {:mmdb2_decoder, "~> 1.1", only: :test, runtime: false}
+      {:mmdb2_decoder,
+       github: "elixir-geolix/mmdb2_decoder",
+       ref: "2a2a382a76cf1437324abf190b106c3dc764bc11",
+       only: :test,
+       runtime: false}
     ]
   end
 

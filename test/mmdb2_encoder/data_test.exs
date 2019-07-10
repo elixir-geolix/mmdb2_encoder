@@ -9,8 +9,8 @@ defmodule MMDB2Encoder.DataTest do
     {"binary length 65_821", String.duplicate("x", 65_821)},
     {"boolean false", false},
     {"boolean true", true},
-    {"cache container", :cache},
-    {"end marker", :end}
+    {"cache container", :cache_container},
+    {"end marker", :end_marker}
   ]
 
   for {name, value} <- @test_values do
