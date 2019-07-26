@@ -3,6 +3,7 @@ defmodule MMDB2Encoder.Data do
 
   # standard data types
   @binary 2
+  @bytes 4
   @extended 0
 
   # extended data types
@@ -42,19 +43,19 @@ defmodule MMDB2Encoder.Data do
   def encode(:boolean, true), do: <<@extended::size(3), 1::size(5), @extended_boolean>>
   def encode(:boolean, false), do: <<@extended::size(3), 0::size(5), @extended_boolean>>
 
-  def encode(:bytes, ""), do: <<@binary::size(3), 0::size(5)>>
+  def encode(:bytes, ""), do: <<@bytes::size(3), 0::size(5)>>
 
   def encode(:bytes, bytes) when is_binary(bytes) and byte_size(bytes) >= 65_821,
-    do: <<@binary::size(3), 31::size(5), byte_size(bytes) - 65_821::size(24), bytes::binary>>
+    do: <<@bytes::size(3), 31::size(5), byte_size(bytes) - 65_821::size(24), bytes::binary>>
 
   def encode(:bytes, bytes) when is_binary(bytes) and byte_size(bytes) >= 285,
-    do: <<@binary::size(3), 30::size(5), byte_size(bytes) - 285::size(16), bytes::binary>>
+    do: <<@bytes::size(3), 30::size(5), byte_size(bytes) - 285::size(16), bytes::binary>>
 
   def encode(:bytes, bytes) when is_binary(bytes) and byte_size(bytes) >= 29,
-    do: <<@binary::size(3), 29::size(5), byte_size(bytes) - 29::size(8), bytes::binary>>
+    do: <<@bytes::size(3), 29::size(5), byte_size(bytes) - 29::size(8), bytes::binary>>
 
   def encode(:bytes, bytes) when is_binary(bytes),
-    do: <<@binary::size(3), byte_size(bytes)::size(5), bytes::binary>>
+    do: <<@bytes::size(3), byte_size(bytes)::size(5), bytes::binary>>
 
   def encode(:cache_container, :cache_container),
     do: <<@extended::size(3), 0::size(5), @extended_cache_container>>
