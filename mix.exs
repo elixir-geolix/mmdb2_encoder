@@ -8,7 +8,7 @@ defmodule MMDB2Encoder.MixProject do
       app: :mmdb2_encoder,
       name: "MMDB2 Encoder",
       version: "0.1.0-dev",
-      elixir: "~> 1.5",
+      elixir: "~> 1.7",
       deps: deps(),
       description: "MMDB2 File Format Encoder",
       docs: docs(),
