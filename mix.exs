@@ -30,7 +30,7 @@ defmodule MMDB2Encoder.MixProject do
       {:excoveralls, "~> 0.11", only: :test, runtime: false},
       {:mmdb2_decoder,
        github: "elixir-geolix/mmdb2_decoder",
-       ref: "2a2a382a76cf1437324abf190b106c3dc764bc11",
+       ref: "a353e3b61bf492d38d3f142d18d6f3cb1366404d",
        only: :test,
        runtime: false}
     ]
