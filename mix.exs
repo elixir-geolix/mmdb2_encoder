@@ -11,6 +11,7 @@ defmodule MMDB2Encoder.MixProject do
       elixir: "~> 1.7",
       deps: deps(),
       description: "MMDB2 File Format Encoder",
+      dialyzer: dialyzer(),
       docs: docs(),
       package: package(),
       preferred_cli_env: [
@@ -29,6 +30,17 @@ defmodule MMDB2Encoder.MixProject do
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:excoveralls, "~> 0.12", only: :test, runtime: false},
       {:mmdb2_decoder, "~> 2.0.0", only: :test, runtime: false}
+    ]
+  end
+
+  defp dialyzer do
+    [
+      flags: [
+        :error_handling,
+        :race_conditions,
+        :underspecs,
+        :unmatched_returns
+      ]
     ]
   end
 
