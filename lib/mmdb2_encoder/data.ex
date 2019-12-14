@@ -12,11 +12,12 @@ defmodule MMDB2Encoder.Data do
   @extended_end_marker 6
 
   @type datatype :: :binary | :boolean | :bytes | :cache_container | :end_marker
+  @type valuetype :: binary | boolean | :cache_container | :end_marker
 
   @doc """
   Encodes a value with automatic type selection.
   """
-  @spec encode(value :: term) :: binary
+  @spec encode(value :: valuetype) :: <<_::8>>
   def encode(value) when is_binary(value), do: encode(:binary, value)
   def encode(value) when is_boolean(value), do: encode(:boolean, value)
   def encode(:cache_container), do: encode(:cache_container, :cache_container)
@@ -25,7 +26,7 @@ defmodule MMDB2Encoder.Data do
   @doc """
   Encodes a value to the appropriate MMDB2 representation.
   """
-  @spec encode(type :: datatype, value :: term) :: binary
+  @spec encode(type :: datatype, value :: valuetype) :: <<_::8>>
   def encode(:binary, ""), do: <<@binary::size(3), 0::size(5)>>
 
   def encode(:binary, binary) when is_binary(binary) and byte_size(binary) >= 65_821,
