@@ -29,7 +29,7 @@ defmodule MMDB2Encoder.MixProject do
       {:dialyxir, "~> 1.0", only: :dev, runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:excoveralls, "~> 0.13.0", only: :test, runtime: false},
-      {:mmdb2_decoder, "~> 2.0.0", only: :test, runtime: false}
+      {:mmdb2_decoder, "~> 3.0.0", only: :test, runtime: false}
     ]
   end
 
