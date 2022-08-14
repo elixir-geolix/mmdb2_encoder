@@ -36,7 +36,6 @@ defmodule MMDB2Encoder.MixProject do
     [
       flags: [
         :error_handling,
-        :race_conditions,
         :underspecs,
         :unmatched_returns
       ],

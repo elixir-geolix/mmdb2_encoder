@@ -22,6 +22,15 @@ jobs:
           - elixir: '1.11.4'
             otp: '22.3'
             runs-on: ubuntu-latest
+          - elixir: '1.12.3'
+            otp: '23.3'
+            runs-on: ubuntu-latest
+          - elixir: '1.13.4'
+            otp: '24.3'
+            runs-on: ubuntu-latest
+          - elixir: '1.13.4'
+            otp: '25.0'
+            runs-on: ubuntu-latest
 
     runs-on: ${{ matrix.runs-on }}
 
