@@ -3,12 +3,13 @@ defmodule MMDB2Encoder.MixProject do
 
   @url_changelog "https://hexdocs.pm/mmdb2_encoder/changelog.html"
   @url_github "https://github.com/elixir-geolix/mmdb2_encoder"
+  @version "0.1.0-dev"
 
   def project do
     [
       app: :mmdb2_encoder,
       name: "MMDB2 Encoder",
-      version: "0.1.0-dev",
+      version: @version,
       elixir: "~> 1.7",
       deps: deps(),
       description: "MMDB2 File Format Encoder",
@@ -48,7 +49,7 @@ defmodule MMDB2Encoder.MixProject do
   defp docs do
     [
       main: "MMDB2Encoder",
-      source_ref: "master",
+      source_ref: "v#{@version}",
       source_url: @url_github
     ]
   end
