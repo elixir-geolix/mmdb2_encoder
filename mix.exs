@@ -1,6 +1,7 @@
 defmodule MMDB2Encoder.MixProject do
   use Mix.Project
 
+  @url_changelog "https://hexdocs.pm/mmdb2_encoder/changelog.html"
   @url_github "https://github.com/elixir-geolix/mmdb2_encoder"
 
   def project do
@@ -53,10 +54,13 @@ defmodule MMDB2Encoder.MixProject do
   end
 
   defp package do
-    %{
+    [
       files: ["CHANGELOG.md", "LICENSE", "mix.exs", "README.md", "lib"],
-      licenses: ["Apache 2.0"],
-      links: %{"GitHub" => @url_github}
-    }
+      licenses: ["Apache-2.0"],
+      links: %{
+        "Changelog" => @url_changelog,
+        "GitHub" => @url_github
+      }
+    ]
   end
 end
